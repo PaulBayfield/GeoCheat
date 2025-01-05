@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GeoCheat</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+    <script src="popup.js"></script>
+
+    <style>
+        html {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        body {
+            font-family: "Inter", sans-serif;
+            padding: 10px;
+            width: 450px;
+            height: 540px;
+        }
+
+        h1 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .underline {
+            text-decoration: underline;
+        }
+
+        #map {
+            width: 100%;
+            height: 250px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+
+        .address-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            height: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="assets/img/logo.png" alt="Logo de l'extension" style="width: 50; height: 50px; margin: 0 auto;"> 
+    <h1>GeoCheat • v<span id="version"></span></h1>
+    <p>GeoCheat is a browser extension that allows you to cheat on geolocation-based games. Tested on <a href="https://www.geoguessr.com/" class="underline">GeoGuessr</a> and <a href="https://www.geotastic.net/" class="underline">Geotastic</a>.</p>
+    <div class="address-container">
+        <div class="item country">
+            <span class="material-symbols-outlined">flag</span>
+            Country:<p id="country">?</p>
+        </div>
+        <div class="item state">
+            <span class="material-symbols-outlined">travel_explore</span>
+            State:<p id="state">?</p>
+        </div>
+        <div class="item city">
+            <span class="material-symbols-outlined">location_city</span>
+            City:<p id="city">?</p>
+        </div>
+        <div class="item road">
+            <span class="material-symbols-outlined">road</span>
+            Road:<p id="road">?</p>
+        </div>
+    </div>
+    <div id="map"></div>
+</body>
+
+</html>

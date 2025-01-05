@@ -1,0 +1,45 @@
+{
+  "name": "GeoCheat",
+  "version": "1.0.1",
+  "manifest_version": 3,
+  "description": "GeoCheat is a browser extension that allows you to cheat on geolocation-based games.",
+  "icons": {
+    "96": "assets/img/logo.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://geotastic.net/*",
+        "https://geoguessr.com/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "bundle.js"
+      ]
+    }
+  ],
+  "action": {
+    "default_title": "GeoCheat",
+    "default_popup": "popup.html",
+    "default_icon": "assets/img/logo.png"
+  },
+  "options_page": "popup.html",
+  "options_ui": {
+    "page": "popup.html",
+    "open_in_tab": true
+  },
+  "background": {
+    "service_worker": "background.js",
+    "scripts": ["background.js"]
+  },
+  "permissions": [
+    "activeTab",
+    "background",
+    "storage",
+    "tabs",
+    "webRequest"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ]
+}
